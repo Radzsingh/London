@@ -166,9 +166,22 @@ low_crime_data
 str(low_crime_data)
 detach(new_london_crime)
 # Ques 9
-plot(high_crime_data, drugA, type = "b",
-     col = "red", lty = 2, pch = 2, lwd = 2,
-     main = "Clinical Trials for Drug A",
-     sub = "This is hypothetical data",
-     xlab = "Dosage", ylab = "Drug Response",
-     xlim = c(0, 60), ylim = c(0, 70))
+attach(high_crime_data)
+plot.new()
+par()
+
+plot(high_crime_data$Borough, 
+     main="Number of Borough Crimes",
+     xlab="Boroughs",
+     ylab="Number of Crimes",
+     col='#5dbaa9')
+
+plot(low_crime_data$Borough, 
+     main="Number of Borough Crimes",
+     xlab="Boroughs",
+     ylab="Number of Crimes",
+     col='#fdbaa9')
+
+lines(high_crime_data$Borough, type = "o", col = "blue", axes = FALSE, ann = FALSE)
+lines(low_crime_data$Borough, type = "o", pch = 22, lty = 2, col = "red")
+box()
