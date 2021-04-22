@@ -166,22 +166,20 @@ low_crime_data
 str(low_crime_data)
 detach(new_london_crime)
 # Ques 9
-attach(high_crime_data)
+# plotting graphs for high and low crime rates
 plot.new()
-par()
-
 plot(high_crime_data$Borough, 
      main="Number of Borough Crimes",
      xlab="Boroughs",
      ylab="Number of Crimes",
      col='#5dbaa9')
-
+# to plot new graph on the same graph
+par(new=TRUE)
 plot(low_crime_data$Borough, 
      main="Number of Borough Crimes",
      xlab="Boroughs",
      ylab="Number of Crimes",
      col='#fdbaa9')
-
-lines(high_crime_data$Borough, type = "o", col = "blue", axes = FALSE, ann = FALSE)
-lines(low_crime_data$Borough, type = "o", pch = 22, lty = 2, col = "red")
 box()
+
+
