@@ -182,4 +182,4 @@ plot(low_crime_data$Borough,
      col='#fdbaa9')
 box()
 
-
+write.csv(new_london_crime, file="london-crime-modified.csv")
